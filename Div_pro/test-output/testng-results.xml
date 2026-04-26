@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-26T18:54:52 IST" name="Demoblaze Suite" finished-at="2026-04-26T18:56:23 IST" duration-ms="91007">
+    <groups>
+    </groups>
+    <test started-at="2026-04-26T18:54:52 IST" name="Login Test" finished-at="2026-04-26T18:55:05 IST" duration-ms="13388">
+      <class name="tests.LoginTestCode">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTestCode@34123d65]" started-at="2026-04-26T18:54:52 IST" name="setup" finished-at="2026-04-26T18:54:59 IST" duration-ms="6664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:tests.LoginTestCode@34123d65]" started-at="2026-04-26T18:54:59 IST" name="loginTest" finished-at="2026-04-26T18:55:05 IST" duration-ms="6098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTestCode@34123d65]" started-at="2026-04-26T18:55:05 IST" name="tearDown" finished-at="2026-04-26T18:55:05 IST" duration-ms="508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginTestCode -->
+    </test> <!-- Login Test -->
+    <test started-at="2026-04-26T18:55:06 IST" name="Add Product To Cart Test" finished-at="2026-04-26T18:55:17 IST" duration-ms="11082">
+      <class name="tests.addProductToCart">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.addProductToCart@6ad82709]" started-at="2026-04-26T18:55:06 IST" name="setup" finished-at="2026-04-26T18:55:09 IST" duration-ms="3229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="addProductToCart()[pri:0, instance:tests.addProductToCart@6ad82709]" started-at="2026-04-26T18:55:09 IST" name="addProductToCart" finished-at="2026-04-26T18:55:16 IST" duration-ms="7387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductToCart -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.addProductToCart@6ad82709]" started-at="2026-04-26T18:55:16 IST" name="teardown" finished-at="2026-04-26T18:55:17 IST" duration-ms="457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.addProductToCart -->
+    </test> <!-- Add Product To Cart Test -->
+    <test started-at="2026-04-26T18:55:17 IST" name="Cart Page Validation Test" finished-at="2026-04-26T18:55:25 IST" duration-ms="8851">
+      <class name="tests.CartPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CartPageTest@2362f559]" started-at="2026-04-26T18:55:17 IST" name="setup" finished-at="2026-04-26T18:55:20 IST" duration-ms="3573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="navigateAndAddProduct()[pri:0, instance:tests.CartPageTest@2362f559]" started-at="2026-04-26T18:55:20 IST" name="navigateAndAddProduct" finished-at="2026-04-26T18:55:25 IST" duration-ms="4813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateAndAddProduct -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CartPageTest@2362f559]" started-at="2026-04-26T18:55:25 IST" name="teardown" finished-at="2026-04-26T18:55:25 IST" duration-ms="454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.CartPageTest -->
+    </test> <!-- Cart Page Validation Test -->
+    <test started-at="2026-04-26T18:55:26 IST" name="Place Order Flow Test" finished-at="2026-04-26T18:55:50 IST" duration-ms="24679">
+      <class name="tests.PlaceOrderTestCode">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.PlaceOrderTestCode@7d20d0b]" started-at="2026-04-26T18:55:26 IST" name="setup" finished-at="2026-04-26T18:55:29 IST" duration-ms="3358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="placeOrderFlow()[pri:0, instance:tests.PlaceOrderTestCode@7d20d0b]" started-at="2026-04-26T18:55:29 IST" name="placeOrderFlow" finished-at="2026-04-26T18:55:50 IST" duration-ms="20779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrderFlow -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.PlaceOrderTestCode@7d20d0b]" started-at="2026-04-26T18:55:50 IST" name="teardown" finished-at="2026-04-26T18:55:50 IST" duration-ms="533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.PlaceOrderTestCode -->
+    </test> <!-- Place Order Flow Test -->
+    <test started-at="2026-04-26T18:55:50 IST" name="Category Navigation + Place Order Test" finished-at="2026-04-26T18:56:12 IST" duration-ms="21338">
+      <class name="tests.CategoryNavigationOrderTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CategoryNavigationOrderTest@55b0dcab]" started-at="2026-04-26T18:55:50 IST" name="setup" finished-at="2026-04-26T18:55:54 IST" duration-ms="3473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="fullFlowTest()[pri:0, instance:tests.CategoryNavigationOrderTest@55b0dcab]" started-at="2026-04-26T18:55:54 IST" name="fullFlowTest" finished-at="2026-04-26T18:56:11 IST" duration-ms="17352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fullFlowTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.CategoryNavigationOrderTest@55b0dcab]" started-at="2026-04-26T18:56:11 IST" name="teardown" finished-at="2026-04-26T18:56:12 IST" duration-ms="504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.CategoryNavigationOrderTest -->
+    </test> <!-- Category Navigation + Place Order Test -->
+    <test started-at="2026-04-26T18:56:12 IST" name="Login Logout Test" finished-at="2026-04-26T18:56:23 IST" duration-ms="11504">
+      <class name="tests.LogoutTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LogoutTest@7c9d8e2]" started-at="2026-04-26T18:56:12 IST" name="setup" finished-at="2026-04-26T18:56:15 IST" duration-ms="3370" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginAndLogout()[pri:0, instance:tests.LogoutTest@7c9d8e2]" started-at="2026-04-26T18:56:15 IST" name="loginAndLogout" finished-at="2026-04-26T18:56:23 IST" duration-ms="7676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAndLogout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LogoutTest@7c9d8e2]" started-at="2026-04-26T18:56:23 IST" name="teardown" finished-at="2026-04-26T18:56:23 IST" duration-ms="450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.LogoutTest -->
+    </test> <!-- Login Logout Test -->
+  </suite> <!-- Demoblaze Suite -->
+</testng-results>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="tests.PlaceOrderTest">
+        <methods>
+          <include name="placeOrder"/>
+        </methods>
+      </class> <!-- tests.PlaceOrderTest -->
+      <class name="tests.InvalidLoginTest">
+        <methods>
+          <include name="invalidLogin"/>
+        </methods>
+      </class> <!-- tests.InvalidLoginTest -->
+      <class name="tests.AddToCartTest">
+        <methods>
+          <include name="addToCart"/>
+        </methods>
+      </class> <!-- tests.AddToCartTest -->
+      <class name="tests.DeleteFromCartTest">
+        <methods>
+          <include name="deleteFromCart"/>
+        </methods>
+      </class> <!-- tests.DeleteFromCartTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

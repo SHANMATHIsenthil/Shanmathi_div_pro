@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Demoblaze Suite">
+    <test name="Login Test">
+        <classes>
+            <class name="tests.LoginTestCode"/>
+        </classes>
+    </test>
+    
+    <test name="Add Product To Cart Test">
+        <classes>
+            <!-- Make sure package + class name matches exactly -->
+            <class name="tests.addProductToCart"/>
+        </classes>
+    </test>
+    
+      <test name="Cart Page Validation Test">
+        <classes>
+            <!-- Match package + class name exactly -->
+            <class name="tests.CartPageTest"/>
+        </classes>
+    </test>
+    
+    <test name="Place Order Flow Test">
+        <classes>
+            <!-- Exact package + class name -->
+            <class name="tests.PlaceOrderTestCode"/>
+        </classes>
+    </test>
+    
+     <test name="Category Navigation + Place Order Test">
+
+        <classes>
+            <!-- Your main test class -->
+            <class name="tests.CategoryNavigationOrderTest"/>
+        </classes>
+
+    </test>
+    
+     <test name="Login Logout Test">
+
+        <classes>
+            <!-- MUST match your package + class name -->
+            <class name="tests.LogoutTest"/>
+        </classes>
+
+    </test>
+</suite>
