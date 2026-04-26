@@ -70,8 +70,10 @@ public class LogoutTest {
         System.out.println("Login successful");
 
         // ===== LOGOUT =====
-        wait.until(ExpectedConditions.elementToBeClickable(
-            By.id("logout2"))).click();
+        WebElement logoutBtn = wait.until(
+        	    ExpectedConditions.elementToBeClickable(By.id("logout2")));
+        	((JavascriptExecutor) driver).executeScript(
+        	    "arguments[0].click();", logoutBtn);
 
         // ===== VERIFY LOGOUT =====
         boolean isLoggedOut = wait.until(
