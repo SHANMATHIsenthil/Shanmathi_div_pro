@@ -1,6 +1,8 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -23,7 +25,8 @@ public class LoginTestCode
     @Test
     public void loginTest() throws InterruptedException {
 
-        driver.findElement(By.id("login2")).click();
+    	WebElement loginBtn = driver.findElement(By.id("login2"));
+    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginBtn);
         Thread.sleep(2000);
 
         driver.findElement(By.id("loginusername")).sendKeys("bowbow");

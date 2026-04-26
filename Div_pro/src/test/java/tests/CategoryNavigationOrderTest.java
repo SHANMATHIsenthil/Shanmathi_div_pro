@@ -23,22 +23,15 @@ public class CategoryNavigationOrderTest {
 
     @BeforeClass
     public void setup() {
-
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
-
-        // Disable Chrome password popup
         HashMap<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
-
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--disable-notifications");
-
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(25));
-
         driver.manage().window().maximize();
         driver.get("https://www.demoblaze.com/");
     }
@@ -47,11 +40,13 @@ public class CategoryNavigationOrderTest {
     public void fullFlowTest() {
 
         // ===== SIGN UP =====
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("signin2"))).click();
+        WebElement signBtn = wait.until(
+            ExpectedConditions.elementToBeClickable(By.id("signin2")));
+        ((JavascriptExecutor) driver).executeScript(
+            "arguments[0].click();", signBtn);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("sign-username")))
-                .sendKeys(username);
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("sign-username"))).sendKeys(username);
         driver.findElement(By.id("sign-password")).sendKeys(password);
         driver.findElement(By.xpath("//button[text()='Sign up']")).click();
 
@@ -59,66 +54,56 @@ public class CategoryNavigationOrderTest {
         driver.switchTo().alert().accept();
 
         // ===== LOGIN =====
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("login2"))).click();
+        WebElement loginBtn = wait.until(
+            ExpectedConditions.elementToBeClickable(By.id("login2")));
+        ((JavascriptExecutor) driver).executeScript(
+            "arguments[0].click();", loginBtn);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")))
-                .sendKeys(username);
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("loginusername"))).sendKeys(username);
         driver.findElement(By.id("loginpassword")).sendKeys(password);
         driver.findElement(By.xpath("//button[text()='Log in']")).click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("nameofuser")));
 
         // ===== CATEGORY NAVIGATION =====
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.linkText(category)
-        )).click();
+            By.linkText(category))).click();
 
-        // Wait for products to load
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tbodyid")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("tbodyid")));
 
-        // Verify products exist
         List<WebElement> products = driver.findElements(
-                By.xpath("//div[@id='tbodyid']//h4/a")
-        );
-
-        Assert.assertTrue(products.size() > 0, "No products found in category!");
-
+            By.xpath("//div[@id='tbodyid']//h4/a"));
+        Assert.assertTrue(products.size() > 0, 
+            "No products found in category!");
         System.out.println("Products loaded: " + products.size());
 
         // ===== SELECT PRODUCT =====
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.linkText(productName)
-        )).click();
-
+            By.linkText(productName))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//h2[@class='name']")
-        ));
+            By.xpath("//h2[@class='name']")));
 
         // ===== ADD TO CART =====
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//a[contains(text(),'Add to cart')]")
-        )).click();
-
+            By.xpath("//a[contains(text(),'Add to cart')]"))).click();
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
 
         // ===== GO TO CART =====
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("cartur"))).click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(
+            By.id("cartur"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//td[text()='" + productName + "']")
-        ));
+            By.xpath("//td[text()='" + productName + "']")));
 
         // ===== PLACE ORDER =====
         wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[text()='Place Order']")
-        )).click();
+            By.xpath("//button[text()='Place Order']"))).click();
 
         // ===== FILL FORM =====
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")))
-                .sendKeys("Shanmathi");
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.id("name"))).sendKeys("Shanmathi");
         driver.findElement(By.id("country")).sendKeys("India");
         driver.findElement(By.id("city")).sendKeys("Chennai");
         driver.findElement(By.id("card")).sendKeys("4111111111111111");
@@ -127,17 +112,11 @@ public class CategoryNavigationOrderTest {
 
         // ===== PURCHASE =====
         driver.findElement(By.xpath("//button[text()='Purchase']")).click();
-
         WebElement successMsg = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//h2[text()='Thank you for your purchase!']")
-                )
-        );
-
+            ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//h2[text()='Thank you for your purchase!']")));
         Assert.assertTrue(successMsg.isDisplayed(), "Order failed!");
-
         System.out.println("Order placed successfully");
-
         driver.findElement(By.xpath("//button[text()='OK']")).click();
     }
 
